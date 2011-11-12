@@ -5,6 +5,10 @@
   "permissions": [
     "http://teamtreehouse.com/"
   ],
+	"background_page": "background.html",
+	"browser_action": {
+		"default_icon": "inactive.png"
+	},
   "content_scripts": [
     {
       "matches": ["http://teamtreehouse.com/*/*/*/*/play"],

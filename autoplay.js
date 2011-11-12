@@ -1,4 +1,6 @@
 $(function() {
+	// Set icon to active state
+	chrome.extension.sendRequest({active: "true"}, function(response) {});
 	
 	var nextVideo;
 	
@@ -29,6 +31,11 @@ $(function() {
 			saveVideo = true;
 		}
 	}
+	
+	// Reset icon when we leave the page
+	$(window).unload(function() {
+		chrome.extension.sendRequest({active: "false"}, function(response) {});
+	});
 	
 });
 
