@@ -13,9 +13,10 @@ There is currently a short delay by between the page load and when the content s
 You need to install the extension manually through the Extensions menu.
 </p>
 <ol>
-<li>1. Go to 'Settings' > 'Tools' > 'Extensions'</li>
-<li>2. Click 'Load Unpacked Extension'</li>
-<li>3. Select the treehouse-autoplay folder</li>
+  <li>Clone the Git Repo</li>
+  <li>Go to 'Settings' > 'Tools' > 'Extensions'</li>
+  <li>Click 'Load Unpacked Extension'</li>
+  <li>Select the treehouse-autoplay folder</li>
 </ol>
 <p>
 I will release the extension into the chrome store if the guys at Treehouse are happy for me to do so.
