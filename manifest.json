@@ -1,11 +1,8 @@
 {
   "name": "Treehouse AutoPlay",
-  "version": "1.1",
+  "version": "1.2",
   "description": "Automatically play through all of the videos in a badge.",
-	"icons": {
-		"128": "icon.png",
-		"48": "icon-48.png"
-	},
+	"icons": { "128": "icon.png" },
   "permissions": [
     "http://teamtreehouse.com/"
   ],
