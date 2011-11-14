@@ -1,6 +1,6 @@
 {
   "name": "Treehouse Autoplay",
-  "version": "1.01",
+  "version": "2",
   "description": "Automatically play through all of the videos in a badge.",
   "permissions": [
     "http://teamtreehouse.com/"
