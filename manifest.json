@@ -5,6 +5,11 @@
   "permissions": [
     "http://teamtreehouse.com/"
   ],
+	"icons": {
+		"32": "icon-32.png"
+		"48": "icon-48.png",
+		"128": "icon-128.png"
+	},
 	"background_page": "background.html",
 	"browser_action": {
 		"default_icon": "inactive.png"
