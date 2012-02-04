@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <!-- Styling -->
+  <style>
+    #container {
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      width: 300px;
+      font-size: 100%;
+    }
+    
+    header {
+      font-size: 0.9em;
+      font-weight: bold;
+      padding-bottom: 0.2em;
+      border-bottom: 1px solid #EEE;
+    }
+    
+    #controls {
+      font-size: 0.9em;
+      padding: 0.4em 0;
+    }
+  </style>
+  
+  <!-- Javascript -->
+  <script src="jquery-1.7.min.js"></script>
+  <script>
+    $(function() {
+      // Get Preferences
+      var fullscreen = localStorage['fullscreen'];
+      
+      // Set teh checkbox according to the preferences
+      if (fullscreen == "true") {
+        $("#fullscreen").prop("checked", true);
+      }
+      
+      // Click listener to change fullscreen preference
+      $('#fullscreen').live('change', function() {
+        if($(this).is(':checked')){
+          fullscreen = true;
+          localStorage['fullscreen'] = true;
+        } else {
+          fullscreen = false;
+          localStorage['fullscreen'] = false;
+        }
+      });
+    });
+  </script>
+</head>
+<body>
+  <div id="container">
+    <header>
+      Options
+    </header>
+    <div id="controls">
+      <div class="control">
+        <img src="fullscreen.png" height="16" alt="Fullscreen"> Auto Full Screen <input type="checkbox" name="fullscreen" id="fullscreen">
+      </div>
+    </div>
+  </div>
+</body>
+</html>

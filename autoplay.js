@@ -1,6 +1,12 @@
 $(function() {
+	
 	// Set icon to active state
-	chrome.extension.sendRequest({active: "true"}, function(response) {});
+	chrome.extension.sendRequest({active: "true", fullscreen: "fetch"}, function(response) {
+		// Full Screen support
+		if (response.fullscreen == "true") {
+			goFullscreen();
+		}
+	});
 	
 	var nextVideo;
 	
@@ -43,4 +49,8 @@ function viewNextVideo(url) {
 	if (url != undefined) {
 		window.location = url;
 	}
+}
+
+function goFullscreen() {
+	$('.mejs-fullscreen-button button').click();
 }
