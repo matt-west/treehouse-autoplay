@@ -19,8 +19,8 @@ $(function() {
 		}
 	})
 	
-	var list = $(".dropdown ul");
-	var currentTitle = $("h1")[0].innerText;
+	var list = $("ul.objects-videos");
+	var currentTitle = $("h2")[0].innerText;
 
 	var numVideos = list.children().length;
 	var saveVideo = false;
@@ -33,7 +33,7 @@ $(function() {
 			saveVideo = false;
 		}
 		
-		if (vid.innerText == currentTitle) {
+		if (vid.children[1].innerText == currentTitle) {
 			saveVideo = true;
 		}
 	}
