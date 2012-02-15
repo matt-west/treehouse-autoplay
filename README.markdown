@@ -3,7 +3,7 @@
 Automatically play through all of the videos in a badge.
 </p>
 <p>
-When you load the first video the extension will seek out the list of videos and find the next video to be played. Once the extension starts working 'mike' will light up in the toolbar. When the video finished the extensions will load the next page and start the video. Full screen viewing is not currently supported.
+When you load the first video the extension will seek out the list of videos and find the next video to be played. Once the extension starts working 'mike' will light up in the toolbar. When the video finished the extensions will load the next page and start the video. Full screen viewing is also supported.
 </p>
 <p>
 There is currently a short delay by between the page load and when the content script is injected into the page resulting in a small pause before videos start playing.
