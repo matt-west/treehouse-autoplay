@@ -1,19 +1,22 @@
 {
+  "manifest_version": 2,
   "name": "Treehouse AutoPlay",
-  "version": "1.2",
+  "version": "1.3",
   "description": "Automatically play through all of the videos in a badge.",
   "permissions": [
     "http://teamtreehouse.com/"
   ],
 	"icons": { "128": "icon.png" },
-	"background_page": "background.html",
+	"background": {
+    "page": "background.html"
+  },
 	"browser_action": {
 		"default_icon": "inactive.png",
 		"default_popup": "popup.html"
 	},
   "content_scripts": [
     {
-      "matches": ["http://teamtreehouse.com/*/*/*/*/play"],
+      "matches": ["http://teamtreehouse.com/*/*/*/*/*"],
       "js": ["jquery-1.7.min.js", "autoplay.js"]
     }
   ]

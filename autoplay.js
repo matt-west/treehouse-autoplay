@@ -1,7 +1,7 @@
 $(function() {
 	
 	// Set icon to active state
-	chrome.extension.sendRequest({active: "true", fullscreen: "fetch"}, function(response) {
+	chrome.extension.sendMessage({active: "true", fullscreen: "fetch"}, function(response) {
 		// Full Screen support
 		if (response.fullscreen == "true") {
 			goFullscreen();
@@ -11,13 +11,15 @@ $(function() {
 	var nextVideo;
 	
 	var video = $("video")[0];
-	video.play();
-	
-	$(video).bind('timeupdate', function() {
-		if (video.ended == true) {
-			viewNextVideo(nextVideo);
-		}
-	})
+	if (video) {
+		video.play();
+
+		$(video).bind('timeupdate', function() {
+			if (video.ended == true) {
+				viewNextVideo(nextVideo);
+			}
+		})
+	}
 	
 	var list = $("ul.objects-videos");
 	var currentTitle = $("h2")[0].innerText;
@@ -33,7 +35,7 @@ $(function() {
 			saveVideo = false;
 		}
 		
-		if (vid.children[1].innerText == currentTitle) {
+		if (vid.className == 'playing-item') {
 			saveVideo = true;
 		}
 	}
