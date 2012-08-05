@@ -42,7 +42,7 @@ $(function() {
 	
 	// Reset icon when we leave the page
 	$(window).unload(function() {
-		chrome.extension.sendRequest({active: "false"}, function(response) {});
+		chrome.extension.sendMessage({active: "false"}, function(response) {});
 	});
 	
 });
