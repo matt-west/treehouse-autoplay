@@ -8,7 +8,7 @@ $(function() {
   }
   
   // Click listener to change fullscreen preference
-  $('#fullscreen').live('change', function() {
+  $('#fullscreen').on('change', function() {
     if($(this).is(':checked')){
       fullscreen = true;
       localStorage['fullscreen'] = true;
