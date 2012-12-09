@@ -1,5 +1,5 @@
 $(function() {
-	
+
 	// Set icon to active state
 	chrome.extension.sendMessage({active: "true", fullscreen: "fetch"}, function(response) {
 		// Full Screen support
@@ -28,14 +28,16 @@ $(function() {
 	var saveVideo = false;
 	
 	for (i = 0; i < numVideos; i++) {
-		vid = list.children('li')[i];
+		vid = list.children('li')[i].children[2].children[0];
+
+		console.log(vid);
 		
 		if (saveVideo == true) {
-			nextVideo = vid.children[0].href;
+			nextVideo = vid.href;
 			saveVideo = false;
 		}
 		
-		if (vid.className == 'playing-item') {
+		if (vid.innerText == currentTitle) {
 			saveVideo = true;
 		}
 	}
