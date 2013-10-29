@@ -16,7 +16,7 @@
 	},
   "content_scripts": [
     {
-      "matches": ["http://teamtreehouse.com/*/*/*/*/*"],
+      "matches": ["http://teamtreehouse.com/library/*/*/*"],
       "js": ["jquery-1.7.min.js", "autoplay.js"]
     }
   ]

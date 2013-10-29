@@ -8,38 +8,16 @@ $(function() {
 		}
 	});
 	
-	var nextVideo;
-	
 	var video = $("video")[0];
 	if (video) {
 		video.play();
 
 		$(video).bind('timeupdate', function() {
 			if (video.ended == true) {
-				viewNextVideo(nextVideo);
+				var videoURL = $('.steps-nav-next').attr('href');
+				viewNextVideo(videoURL);
 			}
-		})
-	}
-	
-	var list = $("ul.objects-videos");
-	var currentTitle = $("h2")[0].innerText;
-
-	var numVideos = list.children().length;
-	var saveVideo = false;
-	
-	for (i = 0; i < numVideos; i++) {
-		vid = list.children('li')[i].children[2].children[0];
-
-		console.log(vid);
-		
-		if (saveVideo == true) {
-			nextVideo = vid.href;
-			saveVideo = false;
-		}
-		
-		if (vid.innerText == currentTitle) {
-			saveVideo = true;
-		}
+		});
 	}
 	
 	// Reset icon when we leave the page
