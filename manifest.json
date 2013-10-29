@@ -6,18 +6,18 @@
   "permissions": [
     "http://teamtreehouse.com/"
   ],
-	"icons": { "128": "icon.png" },
+	"icons": { "128": "img/icon.png" },
 	"background": {
     "page": "background.html"
   },
 	"browser_action": {
-		"default_icon": "inactive.png",
+		"default_icon": "img/inactive.png",
 		"default_popup": "popup.html"
 	},
   "content_scripts": [
     {
       "matches": ["http://teamtreehouse.com/library/*/*/*"],
-      "js": ["jquery-1.7.min.js", "autoplay.js"]
+      "js": ["js/jquery-1.7.min.js", "js/autoplay.js"]
     }
   ]
 }
