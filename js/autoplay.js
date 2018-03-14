@@ -9,16 +9,14 @@ $(function() {
 	});
 	
 	var video = $("video")[0];
-	if (video) {
-		video.play();
-
-		$(video).bind('timeupdate', function() {
-			if (video.ended == true) {
-				var videoURL = $('.steps-nav-next').attr('href');
-				viewNextVideo(videoURL);
-			}
-		});
-	}
+    
+    $(video).on('ended',function(){
+      var videoURL = $('.button.step-overlay-button.primary.icon-on-right').attr('href');
+      setTimeout(function(){
+          var videoURL = $('.button.step-overlay-button.primary.icon-on-right').attr('href');
+          viewNextVideo(videoURL);
+      }, 5000);
+    });
 	
 	// Reset icon when we leave the page
 	$(window).unload(function() {

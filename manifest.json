@@ -16,8 +16,9 @@
 	},
   "content_scripts": [
     {
-      "matches": ["http://teamtreehouse.com/library/*/*/*"],
-      "js": ["js/jquery-1.7.min.js", "js/autoplay.js"]
+      "matches": ["https://teamtreehouse.com/library/*"],
+      "js": ["js/jquery-1.7.min.js", "js/autoplay.js"],
+      "run_at": "document_start"
     }
   ]
 }
