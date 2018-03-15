@@ -3,8 +3,7 @@ $(function() {
     function(request, sender, sendResponse) {
       if (request.active == "true") {
         chrome.browserAction.setIcon({"path": "../img/active.png"});
-        fs = localStorage["fullscreen"];
-        sendResponse({fullscreen: fs});
+        sendResponse({});
       } else if(request.active == "false") {
         chrome.browserAction.setIcon({"path": "../img/inactive.png"});
         sendResponse({});
