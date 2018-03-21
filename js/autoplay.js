@@ -1,9 +1,7 @@
 $(function() {
 
 	// Set icon to active state
-	chrome.extension.sendMessage({active: "true"}, function(response) {
-        
-    });
+	chrome.runtime.sendMessage({active: "true"});
 	
 	var video = $("video")[0];
     
@@ -17,9 +15,7 @@ $(function() {
 	
 	// Reset icon when we leave the page
 	$(window).unload(function() {
-		chrome.extension.sendMessage({active: "false"}, function(response) {
-            
-        });
+		chrome.runtime.sendMessage({active: "false"});
 	});
 	
 });
