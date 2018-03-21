@@ -2,10 +2,7 @@
 
 Automatically play through all of the videos in a badge.
 
-When you load the first video the extension will seek out the list of videos and find the next video to be played. Once the extension starts working 'mike' will light up in the toolbar. When the video finished the extensions will load the next page and start the video. Full screen viewing is also supported.
-
-There is currently a short delay by between the page load and when the content script is injected into the page resulting in a small pause before videos start playing.
-
+When you load the first video the extension will seek out the list of videos and find the next video to be played. Once the extension starts working 'mike' will light up in the toolbar. When the video finished the extensions will load the next page and start the video.
 
 ## Installation
 
@@ -17,7 +14,6 @@ You need to install the extension manually through the Extensions menu.
 4. Select the treehouse-autoplay folder
 
 I will release the extension into the chrome store if the guys at Treehouse are happy for me to do so.
-
 
 ## License
 

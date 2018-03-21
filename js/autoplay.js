@@ -1,28 +1,21 @@
 $(function() {
 
 	// Set icon to active state
-	chrome.extension.sendMessage({active: "true", fullscreen: "fetch"}, function(response) {
-		// Full Screen support
-		if (response.fullscreen == "true") {
-			goFullscreen();
-		}
-	});
+	chrome.runtime.sendMessage({active: "true"});
 	
 	var video = $("video")[0];
-	if (video) {
-		video.play();
-
-		$(video).bind('timeupdate', function() {
-			if (video.ended == true) {
-				var videoURL = $('.steps-nav-next').attr('href');
-				viewNextVideo(videoURL);
-			}
-		});
-	}
+    
+    $(video).on('ended',function(){
+      var videoURL = $('.button.step-overlay-button.primary.icon-on-right').attr('href');
+      setTimeout(function(){
+          var videoURL = $('.button.step-overlay-button.primary.icon-on-right').attr('href');
+          viewNextVideo(videoURL);
+      }, 5000);
+    });
 	
 	// Reset icon when we leave the page
 	$(window).unload(function() {
-		chrome.extension.sendMessage({active: "false"}, function(response) {});
+		chrome.runtime.sendMessage({active: "false"});
 	});
 	
 });
@@ -31,8 +24,4 @@ function viewNextVideo(url) {
 	if (url != undefined) {
 		window.location = url;
 	}
-}
-
-function goFullscreen() {
-	$('.mejs-fullscreen-button button').click();
 }

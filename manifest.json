@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Treehouse AutoPlay",
-  "version": "2.0",
+  "version": "2.1",
   "description": "Automatically play through all of the videos in a badge.",
   "permissions": [
     "http://teamtreehouse.com/"
@@ -16,8 +16,9 @@
 	},
   "content_scripts": [
     {
-      "matches": ["http://teamtreehouse.com/library/*/*/*"],
-      "js": ["js/jquery-1.7.min.js", "js/autoplay.js"]
+      "matches": ["https://teamtreehouse.com/library/*"],
+      "js": ["js/jquery-1.7.min.js", "js/autoplay.js"],
+      "run_at": "document_start"
     }
   ]
 }
